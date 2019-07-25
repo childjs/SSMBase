@@ -8,9 +8,9 @@ import com.js.IDao.PersonDaoI;
 
 public class MybatisExcute {
 	@Test
-	public void selectPer(){
+	public void insertPer(){
 		PersonDaoI dao = new PersonDaoImpl();
-		Pserson person = new Pserson("tony", 20, "男", 98.5);
-		dao.selectPerson(person);
+		Pserson person = new Pserson("测试", 20, "男", 98.5);
+		dao.insertPerson(person);
 	}
 }

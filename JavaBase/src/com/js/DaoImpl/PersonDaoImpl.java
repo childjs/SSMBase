@@ -15,7 +15,7 @@ public class PersonDaoImpl implements PersonDaoI {
 	private SqlSession session;
 
 	@Override
-	public void selectPerson(Pserson person) {
+	public void insertPerson(Pserson person) {
 		try {
 			/*1.读取主配置文件*/
 			InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
