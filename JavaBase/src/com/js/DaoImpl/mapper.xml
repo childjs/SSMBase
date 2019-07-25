@@ -3,10 +3,13 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="test">
- <select id="selectPer" parameterType="com.js.Entity.Pserson">
+ 	<!-- id="insertPerson"用于接口statement参数使用，parameterType传入参数，是实体类对象则为该实体类对象 -->
+	<!-- #{name}  中的name是实体类中的属性，而不是成员变量     #{属性} 动态设值   底层通过反射 组装成getXxx（）方法获取实体类对象中属性的值-->
+	<!-- parameterType属性可以省略 -->
+ <select id="selectPer" parameterType="Pserson">
  	select * from person
  </select>
- <insert id="insertPer" parameterType="com.js.Entity.Pserson">
+ <insert id="insertPer" parameterType="Pserson"><!-- parameterType使用的是mybatis.xml中定义的别名 -->
  	insert into person(name,age,sex,score) values (#{name},#{age},#{sex},#{score})
  </insert>
  </mapper>

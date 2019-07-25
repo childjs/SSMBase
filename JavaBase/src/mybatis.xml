@@ -5,6 +5,13 @@
  <configuration>
  <!-- 注册DB连接数据库四要素 -->
  <properties resource="jdbc.properties"></properties>
+<!-- 设置mapper.xml 中parameterType类型别名 -->
+	<typeAliases>
+		<!-- <typeAlias type="Entity.Person" alias="Person"/> -->
+		<!-- 定义整个包别名，默认是类的简单类名名称 -->
+		<!-- 将指定包中所有类的简单类名作为别名 -->
+		<package name="com.js.Entity"/>
+	</typeAliases>
  <!-- 配置mybatis运行环境 -->
 <environments default="mysql">
 	<environment id="mysql">
