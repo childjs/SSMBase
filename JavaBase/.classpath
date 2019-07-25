@@ -14,7 +14,7 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-api-2.11.2.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-core-2.11.2.jar"/>
-	<classpathentry kind="lib" path="lib/mybatis-3.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.5.2.jar" sourcepath="F:/java开发相关程序/mybatis-3-mybatis-3.5.2.zip"/>
 	<classpathentry kind="lib" path="lib/ognl-3.2.10.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.26.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.26.jar"/>

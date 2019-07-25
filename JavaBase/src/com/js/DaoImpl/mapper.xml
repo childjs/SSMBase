@@ -2,5 +2,11 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper>
+ <mapper namespace="test">
+ <select id="selectPer" parameterType="com.js.Entity.Pserson">
+ 	select * from person
+ </select>
+ <insert id="insertPer" parameterType="com.js.Entity.Pserson">
+ 	insert into person(name,age,sex,score) values (#{name},#{age},#{sex},#{score})
+ </insert>
  </mapper>
