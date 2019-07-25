@@ -12,7 +12,7 @@ public class JavaDemo03 {
 	 **/
 	@Test
 	public void stringTest(){
-		String s = new String("goog");
+		String s = new String("gddoog");
 		String x = "java";
 		System.out.println(s);
 		System.out.println(x);
