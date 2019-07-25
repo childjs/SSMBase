@@ -10,7 +10,7 @@ public class MybatisExcute {
 	@Test
 	public void insertPer(){
 		PersonDaoI dao = new PersonDaoImpl();
-		Pserson person = new Pserson("测试2", 20, "男", 98.5);
+		Pserson person = new Pserson("测试3", 20, "男", 98.5);
 		dao.insertPerson(person);
 	}
 }

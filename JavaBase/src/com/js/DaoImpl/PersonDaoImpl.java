@@ -2,6 +2,8 @@ package com.js.DaoImpl;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.js.Entity.Pserson;
 import com.js.IDao.PersonDaoI;
+import com.js.Utils.MyBatisUtils;
 
 public class PersonDaoImpl implements PersonDaoI {
 	private SqlSession session;
@@ -17,20 +20,66 @@ public class PersonDaoImpl implements PersonDaoI {
 	@Override
 	public void insertPerson(Pserson person) {
 		try {
-			/*1.读取主配置文件*/
-			InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");
-			/*2.创建SqlSessionFactory对象*/
-			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+			
 			//创建sqlSession对象
-			session = sqlSessionFactory.openSession();
+			session = MyBatisUtils.getSession();
 			//操作
 			session.insert("insertPer", person);
 			//通过事务提交
 			session.commit();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}finally {
+			if (session != null){
+				session.close();
+			}
 		}
+	}
+
+	@Override
+	public void insertPersonCatchId(Pserson person) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletePersonById(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updatePerson(Pserson person) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Pserson> selectAllPersons() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<String, Pserson> selectAllPersonMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pserson selectPersonById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pserson selectPersonByMap(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Pserson> selectPersonByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
